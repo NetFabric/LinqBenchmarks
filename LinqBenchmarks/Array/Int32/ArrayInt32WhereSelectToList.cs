@@ -12,9 +12,10 @@ namespace LinqBenchmarks.Array.Int32
         public List<int> ForLoop()
         {
             var list = new List<int>();
-            for (var index = 0; index < source.Length; index++)
+            var array = source;
+            for (var index = 0; index < array.Length; index++)
             {
-                var item = source[index];
+                var item = array[index];
                 if (item.IsEven())
                     list.Add(item * 2);
             }

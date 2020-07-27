@@ -27,9 +27,10 @@ namespace LinqBenchmarks.Array.ValueType
         {
             var set = new HashSet<FatValueType>();
             var sum = default(FatValueType);
-            for (var index = 0; index < source.Length; index++)
+            var array = source;
+            for (var index = 0; index < array.Length; index++)
             {
-                ref readonly var item = ref source[index];
+                ref readonly var item = ref array[index];
                 if (set.Add(item))
                     sum += item;
             }

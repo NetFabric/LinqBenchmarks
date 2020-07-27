@@ -11,8 +11,9 @@ namespace LinqBenchmarks.Array.Int32
         public int ForLoop()
         {
             var sum = 0;
-            for (var index = 0; index < source.Length; index++)
-                sum += source[index] * 2;
+            var array = source;
+            for (var index = 0; index < array.Length; index++)
+                sum += array[index] * 2;
             return sum;
         }
 
