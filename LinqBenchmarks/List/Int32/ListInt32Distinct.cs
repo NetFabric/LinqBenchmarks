@@ -20,7 +20,7 @@ namespace LinqBenchmarks.List.Int32
             var items = System.Linq.Enumerable
                 .SelectMany(
                     System.Linq.Enumerable.Range(0, Duplicates),
-                    _ => System.Linq.Enumerable.Range(0, Count / Duplicates));
+                    _ => System.Linq.Enumerable.Range(0, Count));
 
             source = items.ToList();
             sourceLinqFaster = items.ToList();

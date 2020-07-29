@@ -20,7 +20,8 @@ namespace LinqBenchmarks.List.ValueType
             var items = System.Linq.Enumerable
                 .SelectMany(
                     System.Linq.Enumerable.Range(0, Duplicates),
-                    _ => System.Linq.Enumerable.Range(0, Count / Duplicates).Select(value => new FatValueType(value)));
+                    _ => System.Linq.Enumerable.Range(0, Count)
+                        .Select(value => new FatValueType(value)));
 
             source = items.ToList();
             sourceLinqFaster = items.ToList();

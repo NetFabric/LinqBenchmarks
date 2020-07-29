@@ -18,7 +18,7 @@ namespace LinqBenchmarks.Array.ValueType
             => source = System.Linq.Enumerable
                 .SelectMany(
                     System.Linq.Enumerable.Range(0, Duplicates), 
-                    _ => System.Linq.Enumerable.Range(0, Count / Duplicates)
+                    _ => System.Linq.Enumerable.Range(0, Count)
                         .Select(value => new FatValueType(value)))
                 .ToArray();
 
