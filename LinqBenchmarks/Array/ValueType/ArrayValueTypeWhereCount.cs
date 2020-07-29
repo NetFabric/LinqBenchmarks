@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Diagnosers;
+using JM.LinqFaster;
 using NetFabric.Hyperlinq;
 using StructLinq;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace LinqBenchmarks.Array.ValueType
 
         [Benchmark]
         public int LinqFaster()
-            => JM.LinqFaster.LinqFaster.CountF(source, item => item.IsEven());
+            => source.CountF(item => item.IsEven());
 
         [Benchmark]
         public int StructLinq()

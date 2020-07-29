@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using JM.LinqFaster;
 using NetFabric.Hyperlinq;
 using StructLinq;
 using System.Collections.Generic;
@@ -69,7 +70,7 @@ namespace LinqBenchmarks.List.ValueType
         public FatValueType LinqFaster()
         {
             if (Count != 0)
-                JM.LinqFaster.LinqFaster.DistinctInPlaceF(sourceLinqFaster, new FatValueTypeEqualityComparer());
+                sourceLinqFaster.DistinctInPlaceF(new FatValueTypeEqualityComparer());
             var sum = default(FatValueType);
             for (var index = 0; index < sourceLinqFaster.Count; index++)
                 sum += sourceLinqFaster[index];
