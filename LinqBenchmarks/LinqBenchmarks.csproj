@@ -2,13 +2,20 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net5.0</TargetFrameworks>
-    <LangVersion>8.0</LangVersion>
+    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
-    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1" />
+    <None Remove="C:\Users\antao\.nuget\packages\microsoft.diagnostics.tracing.traceevent\2.0.61\build\..\lib\native\x86\KernelTraceControl.dll" />
+    <None Remove="C:\Users\antao\.nuget\packages\microsoft.diagnostics.tracing.traceevent\2.0.61\build\..\lib\native\x86\KernelTraceControl.Win61.dll" />
+    <None Remove="C:\Users\antao\.nuget\packages\microsoft.diagnostics.tracing.traceevent\2.0.61\build\..\lib\native\x86\msdia140.dll" />
+    <None Remove="C:\Users\antao\.nuget\packages\microsoft.diagnostics.tracing.traceevent\2.0.61\build\..\lib\native\x86\msvcp140.dll" />
+    <None Remove="C:\Users\antao\.nuget\packages\microsoft.diagnostics.tracing.traceevent\2.0.61\build\..\lib\native\x86\vcruntime140.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.12.1.1514" />
+    <PackageReference Include="BenchmarkDotNet.Annotations" Version="0.12.1.1514" />
     <PackageReference Include="LinqAF" Version="3.0.0" />
     <PackageReference Include="JM.LinqFaster" Version="1.1.2" />
     <PackageReference Include="LinqFaster.SIMD" Version="1.0.3" />
@@ -20,18 +27,6 @@
     <PackageReference Include="StructLinq.BCL" Version="0.25.3" />
     <PackageReference Include="System.Interactive" Version="5.0.0" />
     <PackageReference Include="System.Linq.Async" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
-    <PackageReference Include="Cistern.ValueLinq">
-      <Version>0.1.14</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <PackageReference Include="Cistern.ValueLinq">
-      <Version>0.0.10</Version>
-    </PackageReference>
   </ItemGroup>
 
 </Project>
