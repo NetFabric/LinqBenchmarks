@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace LinqBenchmarks.Enumerable.FatReferenceType
 {
-    public class EnumerableFastReferenceTypeAny: EnumerableFatReferenceTypeBenchmarkBase
+    public class EnumerableFatReferenceTypeAny: EnumerableFatReferenceTypeBenchmarkBase
     {
         [Benchmark]
         public bool Linq()
