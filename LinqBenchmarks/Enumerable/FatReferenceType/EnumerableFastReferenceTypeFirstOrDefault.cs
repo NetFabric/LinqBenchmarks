@@ -3,9 +3,9 @@ using NetFabric.Hyperlinq;
 using StructLinq;
 using System.Linq;
 
-namespace LinqBenchmarks.Enumerable.Int32
+namespace LinqBenchmarks.Enumerable.FatReferenceType
 {
-    public class EnumerableFastReferenceTypeFirstOrDefault: EnumerableFatReferenceTypeBenchmarkBase
+    public class EnumerableFatReferenceTypeFirstOrDefault: EnumerableFatReferenceTypeBenchmarkBase
     {
         [Benchmark]
         public bool Linq()
